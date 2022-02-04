@@ -1,0 +1,31 @@
+{% extends 'main/template.html' %}
+
+{% block title %}หน้าแรก{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <br><br>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-5">
+                <img src="{% static 'images/logo.jpg' %}" class="h-100 w-100">
+            </div>
+            <div class="col-md-auto p-5 m-2">
+                <h1>ยินดีต้อนรับ</h1>
+                <p>เว็บไซต์นี้สร้างขึ้นมาเพื่อลดภาระงานของบุคลากรทางการแพทย์ <br>
+                   เนื่องจากเตียงรักษาผู้ป่วยไม่เพียงพอ และมีการ Home Isolation มากขึ้น <br>
+                   จึงเกิดเป็นไอเดียในการ สร้างเว็บไซต์กลางที่เป็นศูนย์รวมของทุกโรงพยาบาล <br>
+                   ในการรักษาผู้ป่วย โรค COVID-19 ที่หาเตียงไม่ได้ และต้อง Home Isolation <br>
+                   และในอนาคตจะมีการรักษาโรคระบาดร้ายแรงอื่น ๆ ด้วย
+                </p>
+                <div class="row p-5">
+                    {% if user.is_authenticated %}
+                    <a class="btn btn-info" href="/{{ request.user.status }}" role="button">หน้าเมนู</a>
+                    {% else %}
+                    <a class="btn btn-info" href="{% url 'login' %}" role="button">เข้าสู่ระบบ</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

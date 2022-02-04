@@ -1,0 +1,14 @@
+{% extends 'main/template.html' %}
+
+{% block title %}เมนูของบุคลากรทางการแพทย์{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <br><br>
+        <center>
+            <a href="{% url 'petient_list' %}" class="btn btn-outline-secondary p-4 m-3 w-75"><b>ข้อมูลผู้ป่วยในความดูแล</b></a>
+            <br>
+            <button type="button" class="btn btn-outline-secondary p-4 m-3 w-75"><b>คุยกับผู้ป่วย</b></button>
+        </center>
+    </div>
+{% endblock %}

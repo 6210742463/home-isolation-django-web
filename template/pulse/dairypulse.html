@@ -1,0 +1,75 @@
+{% extends 'main/template.html' %}
+
+{% block title %}รายงานสัญญาณชีพประจำวัน{% endblock %}
+
+{% block content %}
+    <style>
+        .input-no-spinner {
+        -moz-appearance: textfield;
+        }
+        .input-no-spinner::-webkit-outer-spin-button,
+        .input-no-spinner::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+
+    <br><br>
+    <div class="container">
+        <center><h1>รายงานสัญญาณชีพประจำวัน</h1></center>
+        <div class="d-flex justify-content-center">
+            <form method="POST">
+                {% csrf_token %}
+                
+                <br><br>
+                <div class="border border-success rounded" style="width: 300px;">
+                    <br><br>
+                        <center>
+                        <p>ค่าออกซิเจน (SpO2)</p>
+                        <input type="number" name="spo2" id="spo2" placeholder="ค่าออกซิเจน (SpO2)" class="input-no-spinner">
+                    <br><br>
+
+                        <p>อุณหภูมิร่างกาย ℃</p>
+                        <input type="number" name="temp" id="temp" placeholder="อุณหภูมิร่างกาย" class="input-no-spinner">
+                    <br><br>
+
+                        <p>อัตราการเต้นของหัวใจ</p>
+                        <input type="number" name="beat" id="beat" placeholder="อัตราการเต้นของหัวใจ" class="input-no-spinner">
+                    <br><br>
+                        
+                        <p>อาการ</p>
+                        </center>
+                        &nbsp;<input type="checkbox" name="gs1" id="gs1" value="ไม่มีอาการ"> ไม่มีอาการ
+                        <br>
+                        &nbsp;<input type="checkbox" name="gs2" id="gs2" value="ถ่ายเหลว"> ถ่ายเหลว
+                        <br>
+                        &nbsp;<input type="checkbox" name="gs3" id="gs3" value="ไอ น้ำมูก เจ็บคอ หรืออย่างใดอย่างหนึ่ง"> ไอ น้ำมูก เจ็บคอ หรืออย่างใดอย่างหนึ่ง
+                        <br>
+                        &nbsp;<input type="checkbox" name="gs4" id="gs4" value="ไม่ได้กลิ่น ไม่รับรส หรืออย่างใดอย่างหนึ่ง"> ไม่ได้กลิ่น ไม่รับรส หรืออย่างใดอย่างหนึ่ง
+                        <br>
+                        &nbsp;<input type="checkbox" name="gs5" id="gs5" value="ตาแดง มีผื่น หรืออย่างใดอย่างหนึ่ง"> ตาแดง มีผื่น หรืออย่างใดอย่างหนึ่ง
+                        <br>
+                        &nbsp;<input type="checkbox" name="ys1" id="ys1" value="แน่นหน้าอก"> แน่นหน้าอก
+                        <br>
+                        &nbsp;<input type="checkbox" name="ys2" id="ys2" value="หายใจไม่ค่อยสะดวก"> หายใจไม่ค่อยสะดวก
+                        <br>
+                        &nbsp;<input type="checkbox" name="ys3" id="ys3" value="หายใจเร็ว หายใจลำบาก ไอแล้วรู้สึกเหนื่อย"> หายใจเร็ว หายใจลำบาก ไอแล้วรู้สึกเหนื่อย
+                        <br>
+                        &nbsp;<input type="checkbox" name="ys4" id="ys4" value="อ่อนเพลีย เวียนศีรษะ หรืออย่างใดอย่างหนึ่ง"> อ่อนเพลีย เวียนศีรษะ หรืออย่างใดอย่างหนึ่ง
+                        <br>
+                        &nbsp;<input type="checkbox" name="rs1" id="rs1" value="หอบเหนื่อย พูดไม่เป็นประโยค"> หอบเหนื่อย พูดไม่เป็นประโยค
+                        <br>
+                        &nbsp;<input type="checkbox" name="rs2" id="rs2" value="ซึม เรียกไม่รู้สึกตัว ตอบสนองช้า"> ซึม เรียกไม่รู้สึกตัว ตอบสนองช้า
+                        <br>
+                        &nbsp;<input type="checkbox" name="rs3" id="rs3" value="แน่นหน้าอกตลอดเวลา หายใจแล้วเจ็บหน้าอก"> แน่นหน้าอกตลอดเวลา หายใจแล้วเจ็บหน้าอก
+                        <br><br>
+                        <center>
+                            <button type="submit" class="btn btn-outline-success">ส่งข้อมูล</button>
+                        </center>
+                        <br>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

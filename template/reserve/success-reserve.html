@@ -1,0 +1,16 @@
+{% extends 'main/template.html' %}
+
+{% block title %}จองเตียงล่วงหน้าสำเร็จ{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <br><br>
+        <center>
+            <div class="alert alert-success" role="alert">
+                <h1 class="alert-heading">จองเตียงล่วงหน้าสำเร็จ</h1>
+                <hr>
+                <h2 class="mb-0"><a href="/{{ request.user.status }}">หน้าเมนู</a></h2>
+            </div>
+        </center>
+    </div>
+{% endblock %}

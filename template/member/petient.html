@@ -1,0 +1,16 @@
+{% extends 'main/template.html' %}
+
+{% block title %}เมนูของผู้ป่วย{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <br><br>
+        <center>
+            <a href="{% url 'dairypulse' %}" class="btn btn-outline-secondary p-4 m-3 w-75"><b>รายงานสัญญาณชีพประจำวัน</b></a>
+            <br>
+            <a href="#" class="btn btn-outline-secondary p-4 m-3 w-75"><b>คุยกับบุคลากรทางการแพทย์</b></a>
+            <br>
+            <a href="{% url 'reserve' %}" class="btn btn-outline-secondary p-4 m-3 w-75"><b>จองเตียงล่วงหน้า</b></a>
+        </center>
+    </div>
+{% endblock %}

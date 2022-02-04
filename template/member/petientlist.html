@@ -1,0 +1,27 @@
+{% extends 'main/template.html' %}
+
+{% block title %}เข้าสู่ระบบ{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <br><br>
+    <div class="container">
+        <center>
+        
+            {% csrf_token %}
+            <div class="border border-success rounded" style="width: 300px;">
+                <center>
+                    <br><br>
+                    {% for i in user %}
+                    {% if i.username != request.user.username and i.username != 'admin' %}
+                    <a href="#" class="btn btn-outline-secondary w-50">{{ i.username }}</a>
+                    <br><br>
+                    {% endif %}
+                    {% endfor %}
+                </center>
+                </div>
+            </div>
+        
+        </center>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'main/template.html' %}
+
+{% block title %}สมัครสมาชิก{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <br><br>
+    <div class="container">
+        <center>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="border border-success rounded" style="width: 300px;">
+                <center>
+                    <br>
+                    <img src="{% static 'images/logo.jpg' %}" width="100" height="100">
+
+                        <br><br>
+
+                        <p>ชื่อผู้ใช้</p>
+                        <input type="text" name="username" id="username" placeholder="ชื่อผู้ใช้">
+                    
+                        <br><br>
+
+                        <p>รหัสผ่าน</p>
+                        <input type="text" name="password" id="password" placeholder="รหัสผ่าน">
+                    
+                        <br><br>
+
+                        <p>พิมพ์รหัสผ่านอีกครั้ง</p>
+                        <input type="text" name="repassword" id="repassword" placeholder="พิมพ์รหัสผ่านอีกครั้ง">
+                    
+                        <br><br>
+
+                        <p>สถานะ</p>
+                        <select name="status" id="status">
+                            <option value="doctor"> บุคลากรทางการแพทย์ </option>
+                            <option value="petient"> ผู้ป่วย </option>
+                        </select>
+
+                        <br><br>
+
+                        <button type="submit" class="btn btn-outline-success">สมัครสมาชิก</button>
+
+                        <br><br>
+                </center>
+                </div>
+            </div>
+        </form>
+        </center>
+    </div>
+{% endblock %}

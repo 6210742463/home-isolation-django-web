@@ -1,0 +1,18 @@
+{% extends 'main/template.html' %}
+
+{% block title %}สรุปผล{% endblock %}
+
+{% block content %}
+    <br><br>
+        <div class="container">
+            <center>
+                <h1>สรุปผล</h1>
+                <div class="alert alert-secondary w-75" role="alert">
+                    <h1 class="alert-heading">คุณมีอารการสี <button type="button" class="btn btn-{{ color }} p-3 w-25" disabled></button></h1>
+                    <hr>
+                    <h2 class="mb-0"><a href="/{{ request.user.status }}">หน้าเมนู</a></h2>
+                </div>
+            </center>
+        </div>
+
+{% endblock %}

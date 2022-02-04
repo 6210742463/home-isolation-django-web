@@ -1,0 +1,36 @@
+{% extends 'main/template.html' %}
+
+{% block title %}เกี่ยวกับเรา{% endblock %}
+
+{% block content %}
+    <br><br>
+    <div class="container">
+        <center>
+            <h1>จองเตียงล่วงหน้า</h1>
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                <div class="border border-success rounded" style="width: 300px;">
+                    <center>
+                        <br>
+                        <p>โรงพยาบาล</p>
+                        <select name="status" id="status">
+                            <option value=""> โรงพยาบาลธรรมศาสตร์เฉลิมพระเกียรติ </option>
+                            <option value=""> โรงพยาบาลราชวิถี </option>
+                            <option value="">สถานพยาบาลรวมแพทย์(กระบี่)</option>
+                            <option value="">โรงพยาบาลเทพธารินทร์</option>
+                            <option value="">สถานพยาบาลนันอา</option>
+                            <option value="">โรงพยาบาลสินแพทย์</option>
+                            <option value="">โรงพยาบาลเมโย</option>
+                            <option value="">โรงพยาบาลวิภาวดี</option>
+                        </select>
+                        <br><br>
+
+                        <button type="submit" class="btn btn-outline-success">จอง</button>
+
+                        <br><br>
+                    </center>
+                </div>
+            </form>
+        </center>
+    </div>
+{% endblock %}
